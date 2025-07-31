@@ -1,0 +1,93 @@
+Title,Author,Genre,Year
+Pride and Prejudice,Jane Austen,Classic Fiction,1813
+1984,George Orwell,Dystopian Fiction,1949
+Crime and Punishment,Fyodor Dostoevsky,Psychological Fiction,1866
+One Hundred Years of Solitude,Gabriel García Márquez,Magical Realism,1967
+The Great Gatsby,F. Scott Fitzgerald,Classic Fiction,1925
+Beloved,Toni Morrison,Historical Fiction,1987
+Brave New World,Aldous Huxley,Science Fiction,1932
+The Catcher in the Rye,J.D. Salinger,Coming‑of‑Age Fiction,1951
+Animal Farm,George Orwell,Political Allegory,1945
+The Lord of the Rings,J.R.R. Tolkien,Fantasy,1954
+Lolita,Vladimir Nabokov,Literary Fiction,1955
+Ulysses,James Joyce,Modernist Fiction,1922
+Middlemarch,George Eliot,Classic Fiction,1871
+The Brothers Karamazov,Fyodor Dostoevsky,Classic Fiction,1880
+War and Peace,Leo Tolstoy,Historical Fiction,1869
+Anna Karenina,Leo Tolstoy,Romance / Realism,1877
+Invisible Man,Ralph Ellison,Literary Fiction,1952
+The Odyssey,Homer,Classical Epic,8th century BCE
+Don Quixote,Miguel de Cervantes,Classic Fiction,1605
+The Divine Comedy,Dante Alighieri,Poetry / Epic,1320
+The Trial,Franz Kafka,Philosophical Fiction,1925
+The Stranger,Albert Camus,Existential Fiction,1942
+The Canterbury Tales,Geoffrey Chaucer,Classic Poetry,14th century
+Mrs Dalloway,Virginia Woolf,Literary Fiction,1925
+To the Lighthouse,Virginia Woolf,Modernist Fiction,1927
+Moby Dick,Herman Melville,Adventure Fiction,1851
+Great Expectations,Charles Dickens,Classic Fiction,1861
+Madame Bovary,Gustave Flaubert,Realist Fiction,1857
+A Passage to India,E.M. Forster,Historical Fiction,1924
+Midnight’s Children,Salman Rushdie,Magical Realism,1981
+Gulliver’s Travels,Jonathan Swift,Satire,1726
+The Sound and the Fury,William Faulkner,Modernist Fiction,1929
+The Grapes of Wrath,John Steinbeck,Social Realism,1939
+The Iliad,Homer,Classical Epic,8th century BCE
+The Adventures of Huckleberry Finn,Mark Twain,Classic Fiction,1884
+To Kill a Mockingbird,Harper Lee,Legal / Social Fiction,1960
+A Clockwork Orange,Anthony Burgess,Dystopian Fiction,1962
+Lord of the Flies,William Golding,Allegorical Fiction,1954
+Fahrenheit 451,Ray Bradbury,Science Fiction,1953
+The Old Man and the Sea,Ernest Hemingway,Classic Fiction,1952
+Les Misérables,Victor Hugo,Historical Fiction,1862
+Don Juan (or Odyssey),Marcel Proust,Literary Fiction,1913–27
+The Golden Notebook,Doris Lessing,Modernist Fiction,1962
+The Trial,Franz Kafka,Philosophical Fiction,1925
+Wuthering Heights,Emily Brontë,Gothic Fiction,1847
+Journey to the End of the Night,Louis‑Ferdinand Céline,Modernist Fiction,1932
+The Book of Job,Unknown,Religious Epic,600–400 BCE
+The Brothers Karamazov,Fyodor Dostoevsky,Classic Fiction,1880
+Buddenbrooks,Thomas Mann,Realist Fiction,1901
+The Tin Drum,Günter Grass,Historical Fiction,1959
+Dead Souls,Nikolai Gogol,Satire,1842
+Emma,Jane Austen,Romantic Fiction,1816
+Kidnapped,Robert Louis Stevenson,Adventure Fiction,1886
+The Moonstone,Wilkie Collins,Detective Fiction,1868
+Scoop,Evelyn Waugh,Satire,1938
+The Complete Stories,Edgar Allan Poe,Gothic Fiction,mid‑19th century
+Diary of a Madman,Lu Xun,Short Story,1918
+Blindness,José Saramago,Allegorical Fiction,1995
+Pedro Páramo,Juan Rulfo,Magical Realism,1955
+Jane Eyre,Charlotte Brontë,Gothic Romance,1847
+The Trial,Franz Kafka,Philosophical Fiction,1925
+The Castle,Franz Kafka,Existential Fiction,1926
+The Devil to Pay in the Backlands,João Guimarães Rosa,Regional Fiction,1956
+Love in the Time of Cholera,Gabriel García Márquez,Romantic Fiction,1985
+The Old Man and the Sea,Ernest Hemingway,Classic Fiction,1952
+The Iliad,Homer,Classical Epic,8th century BCE
+Swann’s Way,Marcel Proust,Literary Fiction,1913
+The Odyssey,Homer,Classical Epic,8th century BCE
+On the Road,Jack Kerouac,Beat Fiction,1957
+Appointment in Samarra,John O’Hara,General Fiction,1934
+Of Human Bondage,W. Somerset Maugham,Literary Fiction,1915
+Portnoy’s Complaint,Philip Roth,Satirical Fiction,1969
+All the President’s Men,Carl Bernstein & Bob Woodward,Non‑fiction,1974
+Man’s Search for Meaning,Viktor Frankl,Memoir / Psychology,1946
+The Little Prince,Antoine de Saint‑Exupéry,Fable / Children’s,1943
+Where the Sidewalk Ends,Shel Silverstein,Poetry / Children’s,1974
+Valley of the Dolls,Jacqueline Susann,Drama,1966
+Harry Potter and the Sorcerer’s Stone,J.K. Rowling,Fantasy,1997
+Dune,Frank Herbert,Science Fiction,1965
+In Cold Blood,Truman Capote,True Crime,1965
+A Wrinkle in Time,Madeleine L’Engle,Science Fiction,1962
+Angela’s Ashes,Frank McCourt,Memoir,1996
+The Handmaid’s Tale,Margaret Atwood,Dystopian Fiction,1985
+The Fellowship of the Ring,J.R.R. Tolkien,Fantasy,1954
+The Shining,Stephen King,Horror,1977
+The Fault in Our Stars,John Green,Young Adult Fiction,2012
+Bel Canto,Ann Patchett,Fiction,2001
+Bring Up the Bodies,Hilary Mantel,Historical Fiction,2012
+On Beauty,Zadie Smith,Contemporary Fiction,2005
+Tree of Smoke,Denis Johnson,War Fiction,2007
+How to Be Both,Ali Smith,Experimental Fiction,2014
+Men We Reaped,Jesmyn Ward,Memoir,2013
