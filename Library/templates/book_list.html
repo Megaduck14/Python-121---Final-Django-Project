@@ -1,0 +1,48 @@
+<!-- catalog/templates/book_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+    <h1>Library Books</h1>
+    <p><a href="{% url 'homepage' %}">← Go back to Home</a></p>
+
+    <form method="get" action="{% url 'book_check' %}">
+        <label for="genre">Filter by genre:</label>
+        <select name="genre" id="genre" onchange="this.form.submit()">
+            <option value="">All</option>
+            {% for genre in genres %}
+                <option value="{{ genre.id }}" {% if genre.id == selected_genre %}selected{% endif %}>
+                    {{ genre.genre_text }}
+                </option>
+            {% endfor %}
+        </select>
+    </form>
+
+    <ul>
+        {% for book in books %}
+            <li>
+                <strong>{{ book.name }} </strong><br>
+                Author : {{book.author}}<br>
+                Year : {{book.pub_date}}<br>
+                Genre : {{book.genre.genre_text}}<br>
+                {% if book.available %}
+                    <form action="{% url 'borrow_book' book.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Borrow</button>
+                    </form>
+                {% else %}
+                    <em> Not available</em>
+                {% endif %}
+
+
+            </li>
+        {% empty %}
+            <li>No books available.</li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>
