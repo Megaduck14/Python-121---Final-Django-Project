@@ -5,8 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
 </head>
-<h1> Welcome to the Library</h1>
+
 <body>
-    
+    <h1> Welcome to the Library</h1>
+
+    {% if user.is_authenticated %}
+      <p>Hi, {{ user.username }}!</p>
+      <p><a href="{% url 'user_profile' %}">My Borrowed Books</a></p>
+      <form method="post" action="{% url 'logout' %}" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+      </form>
+    {% else %}
+      <p>
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'signup' %}">Sign Up</a>
+      </p>
+    {% endif %}
+
+    <h2>Browse by Genre</h2>
+    <ul>
+      {% for genre in genres %}
+        <li>
+          <a href="{% url 'book_check' %}?genre={{ genre.id }}">{{ genre.genre_text }}</a>
+        </li>
+      {% empty %}
+        <li>No genres available.</li>
+      {% endfor %}
+    </ul>
+
 </body>
 </html>
