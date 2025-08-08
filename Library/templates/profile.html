@@ -1,26 +1,42 @@
-<h2> Your Borrowed Books </h2>
-{% if messages %}
-  <ul class="messages">
-    {% for message in messages %}
-      <li>{{ message }}</li>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Borrowed Books</title>
+  <link rel="stylesheet" href="{% static 'catalog/css/styles.css' %}">
+</head>
+<body class="body-profile">
+
+  <h2>Your Borrowed Books</h2>
+
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <ul>
+    {% for borrow in borrowed_books %}
+      <li>
+        <strong>{{ borrow.book.name }}</strong><br>
+        Author: {{ borrow.book.author }}<br>
+        Year: {{ borrow.book.pub_date }}<br>
+        Borrowed At: {{ borrow.borrowed_at|date:"Y-m-d H:i" }}<br>
+
+        <form action="{% url 'return_book' borrow.book.id %}" method="post">
+          {% csrf_token %}
+          <button type="submit">Return</button>
+        </form>
+      </li>
+    {% empty %}
+      <li>You haven't borrowed any books.</li>
     {% endfor %}
   </ul>
-{% endif %}
-<ul>
-    {% for borrow in borrowed_books %}
-        <li>
-             <strong>{{ borrow.book.name }}</strong><br>
-      Author: {{ borrow.book.author }}<br>
-      Year: {{ borrow.book.pub_date }}<br>
-      Borrowed At: {{ borrow.borrowed_at|date:"Y-m-d H:i" }}<br>
 
-      <form action="{% url 'return_book' borrow.book.id %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Return</button>
-      </form>
-        </li>
-    {% empty %}
-    <li> You haven't borrowed any books.</li>
-    {% endfor %}
-</ul>
-<a href="{% url 'homepage' %}">Back to homepage</a>
+  <a href="{% url 'homepage' %}">Back to homepage</a>
+
+</body>
+</html>

@@ -1,38 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+  {% load static %}
+  <meta charset="UTF-8" />
+  <title>Welcome to the Library</title>
+  <link rel="stylesheet" href="{% static 'catalog/css/styles.css' %}">
+  
 </head>
-
 <body>
-    <h1> Welcome to the Library</h1>
 
-    {% if user.is_authenticated %}
-      <p>Hi, {{ user.username }}!</p>
-      <p><a href="{% url 'user_profile' %}">My Borrowed Books</a></p>
-      <form method="post" action="{% url 'logout' %}" style="display: inline;">
-        {% csrf_token %}
-        <button type="submit">Logout</button>
-      </form>
-    {% else %}
-      <p>
-        <a href="{% url 'login' %}">Login</a>
-        <a href="{% url 'signup' %}">Sign Up</a>
-      </p>
-    {% endif %}
+  <h1>Welcome to the Library</h1>
 
-    <h2>Browse by Genre</h2>
-    <ul>
+  {% if user.is_authenticated %}
+    <p>Hi, {{ user.username }}!</p>
+    <p><a href="{% url 'user_profile' %}">My Borrowed Books</a></p>
+    <form method="post" action="{% url 'logout' %}" style="display: inline;">
+      {% csrf_token %}
+      <button type="submit">Logout</button>
+    </form>
+  {% else %}
+    <p>
+      <a href="{% url 'login' %}">Login</a>
+      <a href="{% url 'signup' %}">Sign Up</a>
+    </p>
+  {% endif %}
+
+  <!-- Search and filter form -->
+  <form method="get" action="{% url 'book_check' %}">
+    <label for="genre">Filter by genre:</label>
+    <select name="genre" id="genre" onchange="this.form.submit()">
+      <option value="">All</option>
       {% for genre in genres %}
-        <li>
-          <a href="{% url 'book_check' %}?genre={{ genre.id }}">{{ genre.genre_text }}</a>
-        </li>
-      {% empty %}
-        <li>No genres available.</li>
+        <option value="{{ genre.id }}" {% if genre.id == selected_genre %}selected{% endif %}>{{ genre.genre_text }}</option>
       {% endfor %}
-    </ul>
+    </select>
+
+    <label for="search">Search:</label>
+    <input type="text" id="search" name="q" placeholder="Search by book or author" value="{{ search_query }}" />
+    <button type="submit">Search</button>
+  </form>
+
+  <h2>Browse by Genre</h2>
+  <ul>
+    {% for genre in genres %}
+      <li><a href="{% url 'book_check' %}?genre={{ genre.id }}">{{ genre.genre_text }}</a></li>
+    {% empty %}
+      <li>No genres available.</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Books</h2>
+  <ul>
+    {% if books %}
+      {% for book in books %}
+        <li>
+          <strong>{{ book.name }}</strong><br />
+          Author: {{ book.author }}<br />
+          Year: {{ book.pub_date }}<br />
+          Genre: {{ book.genre.genre_text }}<br />
+          {% if book.available %}
+            <form action="{% url 'borrow_book' book.id %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <button type="submit">Borrow</button>
+            </form>
+          {% else %}
+            <em>Not available</em>
+          {% endif %}
+        </li>
+      {% endfor %}
+    {% else %}
+      <li>No books found.</li>
+    {% endif %}
+  </ul>
 
 </body>
 </html>

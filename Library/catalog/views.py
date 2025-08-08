@@ -1,9 +1,10 @@
 from django.shortcuts import render ,redirect , get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
-from .forms import SingUpForm
+from catalog.forms import SingUpForm
 from .models import Book , Genre ,Borrow
 from django.contrib import messages
+from django.db.models import Q
 
 def homepage(request):
     home = "Welcome to the Library "
@@ -13,16 +14,21 @@ def homepage(request):
 @login_required
 def book_check(request):
     genre_id = request.GET.get("genre")
+    search_query = request.GET.get("q")
     genres = Genre.objects.all()
-    
+    books = Book.objects.all()
     if genre_id:
         books = Book.objects.filter(genre_id=genre_id)
-    else:
-        books = Book.objects.all()
+
+    if search_query:
+        books = books.filter(
+            Q(name__icontains=search_query)|Q(author__icontains=search_query)
+        )
     return render(request , "book_list.html" , {
         'books': books,
         'genres': genres,
-        'selected_genre': int(genre_id) if genre_id else None
+        'selected_genre': int(genre_id) if genre_id else None,
+        'search_query':search_query 
     })
 
 @login_required
@@ -49,7 +55,7 @@ def return_book(request , book_id):
     return redirect("user_profile")
 
 
-def singup(request):
+def signup(request):
     if request.method == "POST":
         form = SingUpForm(request.POST)
         if form.is_valid():
